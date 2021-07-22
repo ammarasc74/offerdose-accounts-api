@@ -2,7 +2,10 @@
   "name": "offerdose-accounts-api",
   "version": "1.0.0",
   "description": "RESTful API for offerDose accounts",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "14.15.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
