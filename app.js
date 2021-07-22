@@ -9,16 +9,16 @@ const mongoose = require('mongoose');
 
 // import routes here
 
+const userRoutes = require('./src/controllers/Users/index');
 
 
 // connect to database here 
 
-
-
-mongoose.connect('mongodb+srv://ammarasc:'
-    + process.env.MONGO_ATLAS_PW
+mongoose.connect('mongodb+srv://ammarasc:' +
+    process.env.MONGO_ATLAS_PW
     + '@offerdose-accounts.5gnkr.mongodb.net/offerDoseAccountsDB?retryWrites=true&w=majority'),
 {
+    useMongoClient: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -50,18 +50,13 @@ app.use((req, res, next) => {
     next();
 });
 
-
-
-
 // handling req for routes here
 
-
-
+app.use('/user', userRoutes)
 
 
 
 //  error handling here
-
 
 app.use((next) => {
     const error = new Error('Not Found');
