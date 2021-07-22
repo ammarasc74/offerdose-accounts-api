@@ -15,6 +15,23 @@ const mongoose = require('mongoose');
 
 
 
+mongoose.connect('mongodb+srv://ammarasc:'
+    + process.env.MONGO_ATLAS_PW
+    + '@offerdose-accounts.5gnkr.mongodb.net/offerDoseAccountsDB?retryWrites=true&w=majority'),
+{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+};
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on("error", () => console.log("disconnected"));
+db.once("open", () => console.log("Connected"));
+
+
+
+
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
