@@ -1,0 +1,16 @@
+{
+  "name": "offerdose-accounts-api",
+  "version": "1.0.0",
+  "description": "RESTful API for offerDose accounts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "offerDose",
+    "RESTAPI",
+    "accounts"
+  ],
+  "author": "Ammar yasser",
+  "license": "ISC"
+}
