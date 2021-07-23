@@ -34,7 +34,12 @@ exports.userLogin = (req, res) => {
                         );
                         return res.status(200).json({
                             message: "Auth succecfull",
-                            token: token
+                            token: token,
+                            "userData": {
+                                _id: user[0]._id,
+                                name: user[0].name,
+                                email: user[0].email,
+                            },
                         });
                     }
                     return res.status(406).json({
