@@ -9,7 +9,7 @@ exports.userSignUp = (req, res) => {
         .exec()
         .then(user => {
             if (user.length >= 1) {
-                return res.status(409).json({
+                return res.status(407).json({
                     message: "mail exists"
                 });
             } else {
