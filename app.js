@@ -58,7 +58,7 @@ app.use('/user', userRoutes)
 
 //  error handling here
 
-app.use((next) => {
+app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
     next(error);
