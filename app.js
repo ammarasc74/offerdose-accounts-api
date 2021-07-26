@@ -8,14 +8,12 @@ const mongoose = require('mongoose');
 
 
 // import routes here
-
 const userRoutes = require('./src/controllers/Users/index');
 
 
 // connect to database here 
-
 mongoose.connect('mongodb+srv://ammarasc:' +
-    process.env.MONGO_ATLAS_PW
+    '1771999A'
     + '@offerdose-accounts.5gnkr.mongodb.net/offerDoseAccountsDB?retryWrites=true&w=majority'),
 {
     useMongoClient: true,
@@ -51,13 +49,11 @@ app.use((req, res, next) => {
 });
 
 // handling req for routes here
-
 app.use('/user', userRoutes)
 
 
 
 //  error handling here
-
 app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
