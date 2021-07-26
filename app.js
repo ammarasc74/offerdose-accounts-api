@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 
 
 // import routes here
-const userRoutes = require('./src/controllers/Users/index');
+const userRoutes = require('./src/controllers/users/index');
 
 
 // connect to database here 
