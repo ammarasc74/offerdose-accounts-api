@@ -13,7 +13,7 @@ const userRoutes = require('./src/controllers/Users/index');
 
 // connect to database here 
 mongoose.connect('mongodb+srv://ammarasc:' +
-    '1771999A'
+    process.env.MONGO_ATLAS_PW
     + '@offerdose-accounts.5gnkr.mongodb.net/offerDoseAccountsDB?retryWrites=true&w=majority'),
 {
     useMongoClient: true,
