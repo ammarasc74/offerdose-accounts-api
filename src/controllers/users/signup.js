@@ -7,11 +7,11 @@ exports.userSignUp = (req, res) => {
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {
-      if (user.length >= 1) {
-        return res.status(401).json({
-          message: "mail exists",
-        });
-      }
+      //   if (user.length >= 1) {
+      //     return res.status(401).json({
+      //       message: "mail exists",
+      //     });
+      //   }
       if (email.length === 0) {
         return res.status(402).json({
           message: "Email is required",
