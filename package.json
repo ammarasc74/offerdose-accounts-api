@@ -1,13 +1,13 @@
 {
   "name": "offerdose-accounts-api",
   "version": "1.0.0",
-  "description": "RESTful API for offerDose accounts",
+  "description": "RESTful API for OfferDose accounts",
   "main": "server.js",
   "engines": {
     "node": "14.17.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest watchAll",
     "start": "node server.js"
   },
   "keywords": [
@@ -26,6 +26,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "jest": "^27.0.6",
     "nodemon": "^2.0.12"
   }
 }
