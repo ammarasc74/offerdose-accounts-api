@@ -4,6 +4,21 @@ const bcrypt = require("bcryptjs");
 const User = require("../../models/user");
 
 exports.userSignUp = (req, res) => {
+  if (!req.body.name) {
+    return res.status(401).json({
+      message: "Name is required!",
+    });
+  }
+  if (!req.body.email) {
+    return res.status(401).json({
+      message: "Email is required!",
+    });
+  }
+  if (!req.body.password) {
+    return res.status(401).json({
+      message: "Password is required!",
+    });
+  }
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {
