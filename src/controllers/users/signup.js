@@ -7,14 +7,9 @@ exports.userSignUp = (req, res) => {
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {
-      //   if (user.length >= 1) {
-      //     return res.status(401).json({
-      //       message: "mail exists",
-      //     });
-      //   }
-      if (email.length === 0) {
-        return res.status(402).json({
-          message: "Email is required",
+      if (user.length >= 1) {
+        return res.status(401).json({
+          message: "Auth Failed",
         });
       } else {
         bcrypt.hash(req.body.password, 10, function (err, hash) {
@@ -31,7 +26,7 @@ exports.userSignUp = (req, res) => {
             });
             user.save().then((result) => {
               result = res.status(201).json({
-                message: "Success",
+                message: "Success! User Created",
               });
             });
           }
@@ -39,8 +34,18 @@ exports.userSignUp = (req, res) => {
       }
     })
     .catch((err) => {
-      res.status(501).json({
+      res.status(502).json({
         error: err,
+        message: "Signup failed",
       });
     });
 };
+
+// if (email.length === 0) {
+//   return res.status(402).json(
+//     {
+//       message: "not Success",
+//     },
+//     console.log("dsd")
+//   );
+// }
