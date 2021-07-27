@@ -40,12 +40,3 @@ exports.userSignUp = (req, res) => {
       });
     });
 };
-
-// if (email.length === 0) {
-//   return res.status(402).json(
-//     {
-//       message: "not Success",
-//     },
-//     console.log("dsd")
-//   );
-// }
