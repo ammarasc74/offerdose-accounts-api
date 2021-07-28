@@ -4,6 +4,16 @@ const jwt = require("jsonwebtoken");
 const User = require("../../models/user");
 
 exports.userLogin = (req, res) => {
+  if (!req.body.email) {
+    return res.status(401).json({
+      message: "Email is required!",
+    });
+  }
+  if (!req.body.password) {
+    return res.status(401).json({
+      message: "Password is required!",
+    });
+  }
   User.find({ email: req.body.email })
     .exec()
     .then((user) => {
